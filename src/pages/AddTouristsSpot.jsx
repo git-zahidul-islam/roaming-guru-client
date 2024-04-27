@@ -1,7 +1,8 @@
+import { toast } from "react-toastify";
 
 const AddTouristsSpot = () => {
-    
-    const handleAddData = (e) =>{
+
+    const handleAddData = (e) => {
         e.preventDefault()
         const form = e.target;
 
@@ -15,8 +16,25 @@ const AddTouristsSpot = () => {
         const totalVisitors = form.totalVisitors.value;
         const name = form.name.value;
         const email = form.email.value;
-        const allData = {image,tourists_spot_name,country_Name,location,average_cost,seasonality,travel_time,totalVisitors,name,email}
+        const description = form.description.value;
+        const allData = { image, tourists_spot_name, country_Name, location, average_cost, seasonality, travel_time, totalVisitors, name, email, description }
         console.log(allData);
+
+        fetch('http://localhost:5000/travels',{
+            method: 'POST',
+            headers: {
+                'content-type' : 'application/json'
+            },
+            body: JSON.stringify(allData)
+        })
+        .then(res => res.json())
+        .then(data =>{
+            if(data){
+                toast.success("The data Is added")
+            }
+            console.log("this is client site data",data);
+        })
+
     }
 
     return (
@@ -62,10 +80,14 @@ const AddTouristsSpot = () => {
                             </div>
                             <div className="col-span-full sm:col-span-3">
                                 <label htmlFor="seasonality" className="text-sm">Seasonality</label>
-                                <input id="seasonality" type="text" name="seasonality" placeholder="Seasonality" className="w-full p-2 border-2 border-black" />
+                                {/* <input id="seasonality" type="text" name="seasonality" placeholder="Seasonality" className="w-full p-2 border-2 border-black" /> */}
+                                <select name="seasonality" className="w-full p-2 border-2 border-black">
+                                    <option>Summer</option>
+                                    <option>Winter</option>
+                                </select>
                             </div>
                             <div className="col-span-full sm:col-span-3">
-                                <label htmlFor="travel_time" className="text-sm">travel_time</label>
+                                <label htmlFor="travel_time" className="text-sm">Travel Time</label>
                                 <input id="travel_time" type="number" name="travel_time" placeholder="Travel time" className="w-full p-2 border-2 border-black" />
                             </div>
                             <div className="col-span-full sm:col-span-3">
@@ -80,6 +102,11 @@ const AddTouristsSpot = () => {
                                 <label htmlFor="email" className="text-sm">Email</label>
                                 <input id="email" type="email" name="email" placeholder="email" className="w-full p-2 border-2 border-black" />
                             </div>
+                            <div className="col-span-full">
+                                <label htmlFor="description" className="text-sm">Description</label>
+                                <textarea id="description" type="description" name="description" placeholder="write Short description" className="w-full p-2 border-2 border-black resize-none h-20" />
+                            </div>
+
                             <div className="col-span-full">
                                 <input className="btn btn-primary w-full" type="submit" value="Add Tourist Spot" />
                             </div>
