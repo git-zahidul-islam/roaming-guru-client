@@ -3,6 +3,7 @@ import { AuthContext } from "../context/AuthProvider";
 import { FaEdit } from "react-icons/fa";
 import { MdOutlineDeleteForever } from "react-icons/md";
 import Swal from 'sweetalert2'
+import { Link } from "react-router-dom";
 
 
 const MyList = () => {
@@ -76,7 +77,7 @@ const MyList = () => {
                                     <td className="py-2 text-center">{data.country_Name}</td>
                                     <td className="py-2 text-center">{data.location}</td>
                                     <td className="py-2 text-center">{data.average_cost}</td>
-                                    <td className="py-2 text-center"><button><FaEdit size={20}/></button></td>
+                                    <td className="py-2 text-center"><Link to={`/updateTravels/${data._id}`}><button><FaEdit size={20} /></button></Link></td>
                                     <td className="py-2 text-center"><button onClick={() =>handleDelete(data._id)}><MdOutlineDeleteForever size={25}/></button></td>
                                 </tr>)
                             }

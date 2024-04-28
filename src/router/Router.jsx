@@ -9,6 +9,7 @@ import MyList from "../pages/MyList";
 import ErrorPage from "../pages/ErrorPage";
 import PrivateRouter from "./PrivateRouter";
 import TravelCardDetails from "../pages/TravelCardDetails";
+import UpdateTravels from "../pages/UpdateTravels";
 
 
 
@@ -34,6 +35,11 @@ export const router = createBrowserRouter([
             {
                 path: 'allTouristsSpot/:id',
                 element: <PrivateRouter><TravelCardDetails></TravelCardDetails></PrivateRouter>,
+                loader: ({ params }) => fetch(`http://localhost:5000/travels/${params.id}`)
+            },
+            {
+                path: '/updateTravels/:id',
+                element: <UpdateTravels></UpdateTravels>,
                 loader: ({ params }) => fetch(`http://localhost:5000/travels/${params.id}`)
             },
             {
