@@ -14,7 +14,7 @@ const AuthProvider = ({ children }) => {
     const googleProvider = new GoogleAuthProvider()
     const githubProvider = new GithubAuthProvider()
 
-    const createUser = (email, password) => {
+    const createUserWithEmail = (email, password) => {
         setLoading(true)
         return createUserWithEmailAndPassword(auth, email, password)
     }
@@ -55,7 +55,7 @@ const AuthProvider = ({ children }) => {
     }, [])
 
     const allData = {
-        createUser,
+        createUserWithEmail,
         userLogin,
         userLogOut,
         loginWithGoogle,

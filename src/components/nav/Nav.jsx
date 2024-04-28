@@ -1,10 +1,12 @@
 import { useContext } from "react";
 import { Link, NavLink } from "react-router-dom";
 import { AuthContext } from "../../context/AuthProvider";
-// import logo from '../../../public/otherIMG/logo.png'
 
 const Nav = () => {
-    // const { userLogOut, user } = useContext(AuthContext)
+
+    const { user, userLogOut } = useContext(AuthContext)
+    console.log(user);
+
     const navLink = <>
         <li><NavLink className={({ isActive }) => isActive ? "text-[#00AFEF] text-xl font-semibold px-1 py-1 rounded-md" : "text-xl font-semibold px-1 py-1"} to={'/'}>Home</NavLink></li>
         <li><NavLink className={({ isActive }) => isActive ? "text-[#00AFEF] text-xl font-semibold px-1 py-1 rounded-md" : "text-xl font-semibold px-1 py-1"} to={'/allTouristsSpot'}>All Tourists Spot</NavLink></li>
@@ -12,7 +14,7 @@ const Nav = () => {
         <li><NavLink className={({ isActive }) => isActive ? "text-[#00AFEF] text-xl font-semibold px-1 py-1 rounded-md" : "text-xl font-semibold px-1 py-1"} to={'/myList'}>My List</NavLink></li>
     </>
 
-    const handleLogOut = () => {
+    const handleLogout = () => {
         userLogOut()
             .then(result => {
                 console.log("successfully logout", result);
@@ -36,7 +38,7 @@ const Nav = () => {
                 </div>
                 <Link to={'/'} className="text-2xl font-bold lg:w-8/12 md:w-8/12 w-52">
                     <h1 className="text-xl font-bold">Roaming Guru</h1>
-                    
+
                 </Link>
             </div>
             <div className="navbar-center hidden lg:flex">
@@ -46,28 +48,27 @@ const Nav = () => {
             </div>
             <div className="navbar-end">
                 {
-                    // user ?
-                    //     <div className="flex items-center gap-2">
-                    //         <div className="relative group">
-                    //             <div tabIndex={0} role="button" className="btn btn-ghost btn-circle avatar">
-                    //                 <div className="w-10 rounded-full">
-                    //                     <h1>nai</h1>
-                    //                 </div>
-                    //             </div>
-                    //             {
-                    //                 user.displayName &&
-                    //                 <div className="absolute invisible group-hover:visible bg-[#49c3f0d0] p-2 z-50 w-36 -left-10 rounded-lg">
-                    //                     <h1 className="text-white text-lg">{user && user.displayName}</h1>
-                    //                 </div>
-                    //             }
-                    //         </div>
-                    //         <button onClick={handleLogOut} className="px-3 py-2 bg-[#00afefbc] text-white text-base font-medium">Logout</button>
-                    //     </div>
-                    //     :
-                        <Link to={'/login'}><button className="px-3 py-2 bg-[#00AFEF] text-white font-bold">Login</button></Link>
-                        // ai link a login havai
+                    user ?
+                        <div className="flex items-center gap-2">
+                            <div className="relative group">
+                                <div tabIndex={0} role="button" className="btn btn-ghost btn-circle avatar">
+                                    <div className="w-10 rounded-full">
+                                        <img alt="Tailwind CSS Navbar component"
+                                            src={user && user.photoURL} />
+                                    </div>
+                                </div>
+                                {
+                                    user.displayName &&
+                                    <div className="absolute invisible group-hover:visible bg-[#49c3f0d0] p-2 z-50 w-36 -left-10 rounded-lg">
+                                        <h1 className="text-white text-lg">{user && user.displayName}</h1>
+                                    </div>
+                                }
+                            </div>
+                            <button onClick={handleLogout} className="px-3 py-2 bg-[#00afefbc] text-white text-base font-medium">Logout</button>
+                        </div>
+                        :
+                    <Link to={'/login'}><button className="px-3 py-2 bg-[#00AFEF] text-white font-bold">Login</button></Link>
                 }
-
             </div>
         </div>
     );

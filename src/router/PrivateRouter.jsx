@@ -2,7 +2,7 @@ import { Navigate, useLocation } from 'react-router-dom'
 import PropTypes from 'prop-types';
 import { useContext } from "react";
 import { AuthContext } from "../context/AuthProvider";
-import { DNA } from 'react-loader-spinner';
+import {  RotatingLines } from 'react-loader-spinner';
 
 
 
@@ -14,7 +14,7 @@ const PrivateRouter = ({ children }) => {
     if (loading) {
         return (
             <div className='flex justify-center items-center h-[calc(100vh-180px)]'>
-                <DNA
+                <RotatingLines
                     visible={true}
                     height="130"
                     width="130"

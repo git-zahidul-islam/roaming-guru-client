@@ -1,24 +1,48 @@
-import { Link } from "react-router-dom";
+import { useContext } from "react";
+import { Link, useLocation, useNavigate } from "react-router-dom";
+import { AuthContext } from "../context/AuthProvider";
+import { toast } from "react-toastify";
 
 const Login = () => {
+    const { userLogin } = useContext(AuthContext)
+    const location = useLocation()
+    const navigate = useNavigate()
+
+    const handleLogin = (e) => {
+        e.preventDefault()
+        const form = e.target;
+        const email = form.email.value;
+        const password = form.password.value;
+        console.log(email, password);
+        userLogin(email, password)
+            .then(result => {
+                console.log(result.user);
+                navigate(location?.state ? location.state : '/')
+                toast.success("Successfully Login")
+            })
+            .catch(error => {
+                console.error(error);
+            })
+    }
+
     return (
         <div className="min-h-[60vh]">
             <div className="hero min-h-[85vh] flex items-center justify-center">
                 <div className="hero-content flex-col lg:flex-row">
-                    <img src="https://daisyui.com/images/stock/photo-1635805737707-575885ab0820.jpg" className="max-w-sm rounded-lg shadow-2xl lg:block md:hidden hidden"/>
+                    <img src="https://daisyui.com/images/stock/photo-1635805737707-575885ab0820.jpg" className="max-w-sm rounded-lg shadow-2xl lg:block md:hidden hidden" />
                     <div className="card w-full max-w-sm shadow-2xl bg-base-100">
-                        <form className="card-body">
+                        <form onSubmit={handleLogin} className="card-body">
                             <div className="form-control">
                                 <label className="label">
                                     <span className="label-text">Email</span>
                                 </label>
-                                <input type="email" placeholder="email" className="input input-bordered" required />
+                                <input type="email" placeholder="email" name="email" className="input input-bordered" required />
                             </div>
                             <div className="form-control">
                                 <label className="label">
                                     <span className="label-text">Password</span>
                                 </label>
-                                <input type="password" placeholder="password" className="input input-bordered" required />
+                                <input type="password" placeholder="password" name="password" className="input input-bordered" required />
                                 <label className="label">
                                     <a href="#" className="label-text-alt link link-hover">Forgot password?</a>
                                 </label>

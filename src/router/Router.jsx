@@ -7,6 +7,7 @@ import AllTouristsSpot from "../pages/AllTouristsSpot";
 import AddTouristsSpot from "../pages/AddTouristsSpot";
 import MyList from "../pages/MyList";
 import ErrorPage from "../pages/ErrorPage";
+import PrivateRouter from "./PrivateRouter";
 
 
 
@@ -31,11 +32,11 @@ export const router = createBrowserRouter([
             },
             {
                 path: '/addTouristsSpot',
-                element: <AddTouristsSpot></AddTouristsSpot>
+                element: <PrivateRouter><AddTouristsSpot></AddTouristsSpot></PrivateRouter>
             },
             {
                 path: '/myList',
-                element: <MyList></MyList>
+                element: <PrivateRouter><MyList></MyList></PrivateRouter>
             },
             {
                 path: '/registration',
