@@ -1,7 +1,9 @@
+import { useContext } from "react";
 import { toast } from "react-toastify";
+import { AuthContext } from "../context/AuthProvider";
 
 const AddTouristsSpot = () => {
-
+    const {user} = useContext(AuthContext)
     const handleAddData = (e) => {
         e.preventDefault()
         const form = e.target;
@@ -18,7 +20,7 @@ const AddTouristsSpot = () => {
         const email = form.email.value;
         const description = form.description.value;
         const allData = { image, tourists_spot_name, country_Name, location, average_cost, seasonality, travel_time, totalVisitors, name, email, description }
-        console.log(allData);
+        console.log("added data for check",allData);
 
         fetch('http://localhost:5000/travels',{
             method: 'POST',
@@ -96,11 +98,11 @@ const AddTouristsSpot = () => {
                             </div>
                             <div className="col-span-full sm:col-span-3">
                                 <label htmlFor="name" className="text-sm">Name</label>
-                                <input id="name" type="text" name="name" placeholder="name" className="w-full p-2 border-2 border-black" />
+                                <input id="name" type="text" name="name" placeholder="name" defaultValue={user?.displayName} className="w-full p-2 border-2 border-black" />
                             </div>
                             <div className="col-span-full sm:col-span-3">
                                 <label htmlFor="email" className="text-sm">Email</label>
-                                <input id="email" type="email" name="email" placeholder="email" className="w-full p-2 border-2 border-black" />
+                                <input id="email" type="email" name="email" placeholder="email" defaultValue={user?.email} className="w-full p-2 border-2 border-black" />
                             </div>
                             <div className="col-span-full">
                                 <label htmlFor="description" className="text-sm">Description</label>
