@@ -36,19 +36,19 @@ const AddTouristsSpot = () => {
             }
             console.log("this is client site data",data);
         })
-
+        form.reset()
     }
 
     return (
         <div>
-            <div className="bg-green-300 p-4">
-                <p className="text-xl font-bold ps-4 container mx-auto">Tourist Data Collection</p>
+            <div className="bg-green-500 p-4">
+                <p className="text-xl font-bold ps-4 container mx-auto text-white">Tourist Data Collection</p>
             </div>
-            <section className="">
+            <section>
                 <form onSubmit={handleAddData} className="container flex flex-col mx-auto space-y-12">
                     <fieldset className="grid grid-cols-4 gap-6 p-4 rounded-md">
-                        <div className="space-y-2 col-span-full lg:col-span-1">
-                            <p className="font-medium">Add Your Tourist Place</p>
+                        <div className="space-y-2 col-span-full lg:col-span-1 bg-green-100 p-4">
+                            <p className="font-medium text-base text-green-500">Add Your Tourist Place</p>
                             <p className="text-xs">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Adipisci fuga autem eum!</p>
                         </div>
                         <div className="grid grid-cols-6 gap-4 col-span-full lg:col-span-3">
@@ -110,7 +110,7 @@ const AddTouristsSpot = () => {
                             </div>
 
                             <div className="col-span-full">
-                                <input className="btn btn-primary w-full" type="submit" value="Add Tourist Spot" />
+                                <input className="btn bg-green-800 text-white w-full hover:bg-none" type="submit" value="Add Tourist Spot" />
                             </div>
                         </div>
                     </fieldset>
