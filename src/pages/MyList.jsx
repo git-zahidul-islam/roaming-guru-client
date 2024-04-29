@@ -55,7 +55,7 @@ const MyList = () => {
     }
 
     return (
-        <div>
+        <div className="min-h-[56vh]">
             <div className="container p-2 mx-auto sm:p-4 text-gray-800 mt-5">
                 <h2 className="text-2xl font-semibold leading-tight p-2 bg-slate-400">Invoices</h2>
                 <div className="overflow-x-auto">

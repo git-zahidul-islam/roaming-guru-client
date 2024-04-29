@@ -10,6 +10,8 @@ import ErrorPage from "../pages/ErrorPage";
 import PrivateRouter from "./PrivateRouter";
 import TravelCardDetails from "../pages/TravelCardDetails";
 import UpdateTravels from "../pages/UpdateTravels";
+import Countries from "../components/countries/Countries";
+import CountriesData from "../pages/CountriesData";
 
 
 
@@ -41,6 +43,16 @@ export const router = createBrowserRouter([
                 path: '/updateTravels/:id',
                 element: <UpdateTravels></UpdateTravels>,
                 loader: ({ params }) => fetch(`http://localhost:5000/travels/${params.id}`)
+            },
+            {
+                path: '/countries',
+                element: <Countries></Countries>,
+                loader: () => fetch('http://localhost:5000/homeTravel')
+            },
+            {
+                path: '/homeTravel/:country_Name',
+                element: <CountriesData></CountriesData>,
+                loader: ({ params }) => fetch(`http://localhost:5000/homeTravel/${params.country_Name}`)
             },
             {
                 path: '/addTouristsSpot',
