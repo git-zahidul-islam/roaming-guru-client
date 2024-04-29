@@ -1,13 +1,13 @@
 // import { useState } from "react";
-import { useLoaderData } from "react-router-dom";
+import { useLoaderData, useNavigate } from "react-router-dom";
 // import { toast } from "react-toastify";
 import Swal from "sweetalert2";
 
 
 const UpdateTravels = () => {
     const loaderData = useLoaderData()
-    // const [travelsData, setTravelsData] = useState(loaderData)
     const { _id, image, tourists_spot_name, country_Name, location, average_cost, seasonality, travel_time, totalVisitors, name, email, description } = loaderData;
+    const navigate = useNavigate()
 
     const handleUpdateData = (e) => {
         e.preventDefault()
@@ -44,6 +44,7 @@ const UpdateTravels = () => {
                     });
                 }
                 console.log(data);
+                navigate('/myList')
             })
 
     }

@@ -1,5 +1,4 @@
 import { useLoaderData } from "react-router-dom";
-import Footer from "../components/footer/Footer";
 import HomeCard from "../components/homeCard/HomeCard";
 import { useContext } from "react";
 import { AuthContext } from "../context/AuthProvider";
@@ -28,11 +27,13 @@ const Home = () => {
     }
     
     return (
-        <div className="">
+        <div>
             <div className="lg:h-[80vh] md:h-[70vh] h-[50vh] w-full flex items-center justify-center">
                 <Slider></Slider>
             </div>
-            <div className="min-h-[60vh] container mx-auto flex justify-center items-center">
+            <div className="min-h-[60vh] container mx-auto flex flex-col justify-center items-center mt-5 space-y-4">
+                <h1 className="text-2xl font-bold">Tourists Spots</h1>
+                <p className="text-center text-gray-600">Explore the enchanting beauty of Kyoto's historic temples and tranquil gardens, where <br /> timeless elegance meets serene tranquility.</p>
                 <div className="grid lg:grid-cols-3 md:grid-cols-2 gap-6 py-4">
                     {
                         travelData.slice(0,6).map(data => <HomeCard key={data._id} travelData={data}></HomeCard>)
@@ -40,7 +41,9 @@ const Home = () => {
                 </div>
             </div>
             <div className="container mx-auto bg-green-200 h-[45vh]">
-                <h1>this is Countries Section</h1>
+                <h1 className="text-center text-2xl font-bold">Countries</h1>
+                <p className="text-center text-gray-600">Explore the enchanting beauty of Kyoto's historic temples and tranquil gardens, where <br /> timeless elegance meets serene tranquility.</p>
+                
             </div>
             <div className="">
                 <Extra1></Extra1>
