@@ -53,7 +53,7 @@ const Home = () => {
                     }
                 </div>
             </div>
-            <div className="container mx-auto bg-green-200">
+            <div className="container mx-auto">
                 <h1 className="text-center text-2xl font-bold">Countries</h1>
                 <p className="text-center text-gray-600">Explore the enchanting beauty of Kyoto's historic temples and tranquil gardens, where <br /> timeless elegance meets serene tranquility.</p>
                 {/* <Countries></Countries> */}

@@ -6,12 +6,12 @@ import { getAuth } from "firebase/auth";
 
 // Your web app's Firebase configuration
 const firebaseConfig = {
-    apiKey: "AIzaSyBlwuVhAUCqWUAT5GtLlW2Htrv6YOTSK4c",
-    authDomain: "roaming-guru.firebaseapp.com",
-    projectId: "roaming-guru",
-    storageBucket: "roaming-guru.appspot.com",
-    messagingSenderId: "73107990893",
-    appId: "1:73107990893:web:3cb498d792fd72eca19264"
+    apiKey:import.meta.env.VITE_APIKEY,
+    authDomain:import.meta.env.VITE_AUTHDOMAIN,
+    projectId:import.meta.env.VITE_PROJECTID,
+    storageBucket:import.meta.env.VITE_STORAGEBUCKET,
+    messagingSenderId:import.meta.env.VITE_MESSAGINGSENDERID,
+    appId:import.meta.env.VITE_APPID,
 };
 
 // Initialize Firebase

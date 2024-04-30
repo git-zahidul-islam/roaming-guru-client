@@ -7,25 +7,37 @@ const TravelCardDetails = () => {
 
     console.log(loaderTravel);
     return (
-        <div className="container mx-auto py-5 lg:px-0 md:px-0 px-2 space-y-5">
-            <div className="flex justify-between items-center bg-amber-50 px-0 py-4">
-                <div>
-                    <h1>{tourists_spot_name}</h1>
-                    <p>{location}</p>
+        <div className="font-[sans-serif]">
+            <div className="p-6 lg:max-w-7xl max-w-2xl max-lg:mx-auto">
+                <div className="grid items-start grid-cols-1 lg:grid-cols-5 gap-12">
+                    <div className="lg:col-span-3 bg-gray-100 w-full lg:sticky top-0 text-center">
+                        <img src={image} alt="Product" className="rounded object-cover w-full h-full" />
+                    </div>
+                    <div className="lg:col-span-2 space-y-3">
+                        <h2 className="text-2xl font-extrabold text-gray-800">{tourists_spot_name}</h2>
+                        <div className="flex flex-wrap gap-4 mt-4">
+                            <p className="text-gray-800 text-xl font-bold">{average_cost}$ Dollar</p>
+                        </div>
+                        <div className="flex gap-2">
+                            <button className="p-2 bg-green-300">{country_Name}</button>
+                            <button className="p-2 bg-green-300">{seasonality}</button>
+                        </div>
+                        <p className="">{location}</p>
+                        <div className="bg-green-100">
+                            <p>Name: {name}</p>
+                            <p>Email: {email}</p>
+                            <p>Travel Times: {travel_time} Days</p>
+                            <p>Total Visitor: {totalVisitors}+ People</p>
+                            
+                        </div>
+                        <div className="mt-2">
+                            <h3 className="text-lg font-bold text-gray-800">Description</h3>
+                            <div>
+                                <p>{description}</p>
+                            </div>
+                        </div>
+                    </div>
                 </div>
-                <p>Total Visitor Per Year: {totalVisitors}</p>
-            </div>
-            <div className="grid md:grid-cols-2 gap-5">
-                <div className="shadow-xl">
-                    <img src={image} alt="travel card image" />
-                </div>
-                <div className="bg-green-100 shadow-xl">
-                    <p>{seasonality}</p>
-                    <p>{country_Name}</p>
-                </div>
-            </div>
-            <div className="shadow-2xl bg-slate-300">
-                <p>{description}</p>
             </div>
         </div>
     );
