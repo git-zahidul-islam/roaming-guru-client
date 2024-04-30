@@ -16,7 +16,7 @@ const Home = () => {
     const [homeData, setHomeData] = useState([])
 
     useEffect(() => {
-        fetch('http://localhost:5000/homeTravel')
+        fetch('https://roaming-guru-server.vercel.app/homeTravel')
             .then(res => res.json())
             .then(data => {
                 setHomeData(data)
@@ -62,7 +62,7 @@ const Home = () => {
                     <h1 className="text-center text-2xl font-bold">Countries</h1>
                 </Fade>
                 <Fade duration={1200} delay={200} direction="down">
-                <p className="text-center text-gray-600">Explore the enchanting beauty of Kyoto's historic temples and tranquil gardens, where <br /> timeless elegance meets serene tranquility.</p>
+                    <p className="text-center text-gray-600">Explore the enchanting beauty of Kyoto's historic temples and tranquil gardens, where <br /> timeless elegance meets serene tranquility.</p>
                 </Fade>
                 {/* <Countries></Countries> */}
                 <div className="grid lg:grid-cols-3 md:grid-cols-2 grid-cols-1 gap-8 mt-5">

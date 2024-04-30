@@ -5,8 +5,9 @@ import { useContext } from "react";
 import { AuthContext } from "../context/AuthProvider";
 
 const AllTouristsSpot = () => {
-    const {loading} = useContext(AuthContext)
+    const { loading } = useContext(AuthContext)
     const loaderTravel = useLoaderData()
+
     if (loading) {
         return (
             <div className='flex justify-center items-center h-[calc(100vh-180px)]'>
@@ -22,12 +23,21 @@ const AllTouristsSpot = () => {
         )
     }
     return (
-        <div className="grid lg:grid-cols-3 md:grid-cols-2 gap-6 p-4">
-            {
-                loaderTravel.map(data =>
-                    <TravelCard key={data._id} cardData={data}></TravelCard>)
-            }
+        <div>
+            <div className="flex justify-center ">
+                <h1>Sorting</h1>
+                <select className="w-[100px] border-2 rounded-sm px-2 border-red-500">
+                    <option value="price">Price</option>
+                </select>
+            </div>
+            <div className="grid lg:grid-cols-3 md:grid-cols-2 gap-6 p-4">
+                {
+                    loaderTravel.map(data =>
+                        <TravelCard key={data._id} cardData={data}></TravelCard>)
+                }
+            </div>
         </div>
+
     );
 };
 

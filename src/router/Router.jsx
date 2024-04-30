@@ -27,32 +27,32 @@ export const router = createBrowserRouter([
             {
                 path: '/',
                 element: <Home></Home>,
-                loader: () => fetch('http://localhost:5000/travels')
+                loader: () => fetch('https://roaming-guru-server.vercel.app/travels')
             },
             {
                 path: '/allTouristsSpot',
                 element: <AllTouristsSpot></AllTouristsSpot>,
-                loader: () => fetch('http://localhost:5000/travels')
+                loader: () => fetch('https://roaming-guru-server.vercel.app/travels')
             },
             {
                 path: 'allTouristsSpot/:id',
                 element: <PrivateRouter><TravelCardDetails></TravelCardDetails></PrivateRouter>,
-                loader: ({ params }) => fetch(`http://localhost:5000/travels/${params.id}`)
+                loader: ({ params }) => fetch(`https://roaming-guru-server.vercel.app/travels/${params.id}`)
             },
             {
                 path: '/updateTravels/:id',
                 element: <UpdateTravels></UpdateTravels>,
-                loader: ({ params }) => fetch(`http://localhost:5000/travels/${params.id}`)
+                loader: ({ params }) => fetch(`https://roaming-guru-server.vercel.app/travels/${params.id}`)
             },
             {
                 path: '/countries',
                 element: <Countries></Countries>,
-                loader: () => fetch('http://localhost:5000/homeTravel')
+                loader: () => fetch('https://roaming-guru-server.vercel.app/homeTravel')
             },
             {
                 path: '/travels/countryName/:countryName',
                 element: <CountriesData></CountriesData>,
-                loader: ({ params }) => fetch(`http://localhost:5000/travels/countryName/${params.countryName}`)
+                loader: ({ params }) => fetch(`https://roaming-guru-server.vercel.app/travels/countryName/${params.countryName}`)
             },
             {
                 path: '/addTouristsSpot',

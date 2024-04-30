@@ -12,7 +12,7 @@ const MyList = () => {
 
 
     useEffect(() => {
-        fetch(`http://localhost:5000/myList/${user?.email}`)
+        fetch(`https://roaming-guru-server.vercel.app/myList/${user?.email}`)
             .then(res => res.json())
             .then((data) => {
                 // console.log(data);
@@ -20,7 +20,7 @@ const MyList = () => {
             })
     }, [user])
 
-    const handleDelete = (id) =>{
+    const handleDelete = (id) => {
         // console.log(id);
         Swal.fire({
             title: "Are you sure?",
@@ -33,25 +33,25 @@ const MyList = () => {
         }).then((result) => {
             if (result.isConfirmed) {
                 console.log("delete conform");
-                fetch(`http://localhost:5000/travels/${id}`,{
+                fetch(`https://roaming-guru-server.vercel.app/${id}`, {
                     method: 'DELETE'
                 })
-                .then(res => res.json())
-                .then(data => {
-                    console.log(data);
-                    if (data.deletedCount > 0){
-                        Swal.fire({
-                            title: "Deleted!",
-                            text: "Your file has been deleted.",
-                            icon: "success"
-                        });
-                        const remaining = myListData.filter(data => data._id !== id);
-                        setMyListData(remaining)
-                    }
-                })
+                    .then(res => res.json())
+                    .then(data => {
+                        console.log(data);
+                        if (data.deletedCount > 0) {
+                            Swal.fire({
+                                title: "Deleted!",
+                                text: "Your file has been deleted.",
+                                icon: "success"
+                            });
+                            const remaining = myListData.filter(data => data._id !== id);
+                            setMyListData(remaining)
+                        }
+                    })
             }
         });
-        
+
     }
 
     return (
@@ -77,8 +77,8 @@ const MyList = () => {
                                     <td className="py-2 text-center">{data.country_Name}</td>
                                     <td className="py-2 text-center">{data.location}</td>
                                     <td className="py-2 text-center">{data.average_cost}</td>
-                                    <td className="py-2 text-center"><Link to={`/updateTravels/${data._id}`}><button><FaEdit size={20} /></button></Link></td>
-                                    <td className="py-2 text-center"><button onClick={() =>handleDelete(data._id)}><MdOutlineDeleteForever size={25}/></button></td>
+                                    <td className="py-2 text-center"><Link to={`/updateTravels/${data._id}`}><button><FaEdit className="text-green-500" size={20} /></button></Link></td>
+                                    <td className="py-2 text-center"><button onClick={() => handleDelete(data._id)}><MdOutlineDeleteForever className="text-red-600" size={25} /></button></td>
                                 </tr>)
                             }
                         </tbody>

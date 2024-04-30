@@ -7,6 +7,9 @@ AOS.init();
 
 const TravelCard = ({ cardData }) => {
     const {_id, image, tourists_spot_name, average_cost, seasonality, travel_time, totalVisitors } = cardData;
+
+    
+
     return (
         <div data-aos="fade-up" data-aos-delay="300" data-aos-once="true"  data-aos-duration="1000" className="shadow-[0px_2px_3px_-1px_rgba(0,0,0,0.1),0px_1px_0px_0px_rgba(25,28,33,0.02),0px_0px_0px_1px_rgba(25,28,33,0.08)] p-2">
             <div className="h-72 relative">

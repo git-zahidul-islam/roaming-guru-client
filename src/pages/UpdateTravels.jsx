@@ -27,7 +27,7 @@ const UpdateTravels = () => {
         const allData = { image, tourists_spot_name, country_Name, location, average_cost, seasonality, travel_time, totalVisitors, name, email, description }
         // console.log("added data for check", allData);
 
-        fetch(`http://localhost:5000/travels/${_id}`, {
+        fetch(`https://roaming-guru-server.vercel.app/travels/${_id}`, {
             method: 'PUT',
             headers: {
                 'content-type': 'application/json'
@@ -36,7 +36,7 @@ const UpdateTravels = () => {
         })
             .then(res => res.json())
             .then(data => {
-                if (data.modifiedCount > 0){
+                if (data.modifiedCount > 0) {
                     Swal.fire({
                         title: "Updated",
                         text: "Your file has been Updated",
@@ -55,9 +55,9 @@ const UpdateTravels = () => {
             <section className="">
                 <form onSubmit={handleUpdateData} className="container flex flex-col mx-auto space-y-12">
                     <fieldset className="grid grid-cols-4 gap-6 p-4 rounded-md">
-                        <div className="space-y-2 col-span-full lg:col-span-1 bg-[#34c47c9f]">
+                        <div className="space-y-2 col-span-full lg:col-span-1 bg-[#34c47c9f] p-2">
                             <p className="font-medium text-white">Update Your Tourist Place</p>
-                            <p className="text-xs">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Adipisci fuga autem eum!</p>
+                            <p className="text-xs">Of course! Just let me know which tourist place you're referring to, and I'll update the description for you.</p>
                         </div>
                         <div className="grid grid-cols-6 gap-4 col-span-full lg:col-span-3">
                             <div className="col-span-full sm:col-span-3">
@@ -90,7 +90,6 @@ const UpdateTravels = () => {
                             </div>
                             <div className="col-span-full sm:col-span-3">
                                 <label htmlFor="seasonality" className="text-sm">Seasonality</label>
-                                {/* <input id="seasonality" type="text" name="seasonality" placeholder="Seasonality" className="w-full p-2 border-2 border-black" /> */}
                                 <select name="seasonality" defaultValue={seasonality} className="w-full p-2 border-2 border-black">
                                     <option>Summer</option>
                                     <option>Winter</option>
@@ -123,7 +122,7 @@ const UpdateTravels = () => {
                         </div>
                     </fieldset>
                 </form>
-            </section>  
+            </section>
         </div>
     );
 };

@@ -3,7 +3,7 @@ import { toast } from "react-toastify";
 import { AuthContext } from "../context/AuthProvider";
 
 const AddTouristsSpot = () => {
-    const {user} = useContext(AuthContext)
+    const { user } = useContext(AuthContext)
     const handleAddData = (e) => {
         e.preventDefault()
         const form = e.target;
@@ -20,22 +20,22 @@ const AddTouristsSpot = () => {
         const email = form.email.value;
         const description = form.description.value;
         const allData = { image, tourists_spot_name, country_Name, location, average_cost, seasonality, travel_time, totalVisitors, name, email, description }
-        console.log("added data for check",allData);
+        console.log("added data for check", allData);
 
-        fetch('http://localhost:5000/travels',{
+        fetch('https://roaming-guru-server.vercel.app/travels', {
             method: 'POST',
             headers: {
-                'content-type' : 'application/json'
+                'content-type': 'application/json'
             },
             body: JSON.stringify(allData)
         })
-        .then(res => res.json())
-        .then(data =>{
-            if(data){
-                toast.success("The data Is added")
-            }
-            console.log("this is client site data",data);
-        })
+            .then(res => res.json())
+            .then(data => {
+                if (data) {
+                    toast.success("The data Is added")
+                }
+                console.log("this is client site data", data);
+            })
         form.reset()
     }
 
@@ -49,7 +49,7 @@ const AddTouristsSpot = () => {
                     <fieldset className="grid grid-cols-4 gap-6 p-4 rounded-md">
                         <div className="space-y-2 col-span-full lg:col-span-1 bg-green-100 p-4">
                             <p className="font-medium text-base text-green-500">Add Your Tourist Place</p>
-                            <p className="text-xs">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Adipisci fuga autem eum!</p>
+                            <p className="text-xs">Sure, I'd be happy to help! Could you please specify which tourist place you'd like a short description for?</p>
                         </div>
                         <div className="grid grid-cols-6 gap-4 col-span-full lg:col-span-3">
                             <div className="col-span-full sm:col-span-3">

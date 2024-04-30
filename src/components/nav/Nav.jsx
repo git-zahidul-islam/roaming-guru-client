@@ -95,7 +95,22 @@ const Nav = () => {
                             <button onClick={handleLogout} className="px-3 py-2 bg-[#D83F31] text-white text-base font-medium">Logout</button>
                         </div>
                         :
-                    <Link to={'/login'}><button className="px-3 py-2 bg-[#00AFEF] text-white font-bold">Login</button></Link>
+                        <div className="dropdown dropdown-end">
+                            <div tabIndex={0} role="button" className="md:px-6 p-2 bg-[#DB5043] text-white md:text-lg rounded-lg md:font-bold">Join Now</div>
+                            <ul tabIndex={0} className="dropdown-content z-[1] menu shadow bg-white rounded-box space-y-2">
+                                <li className="w-full bg-[#db5043e1] rounded-lg">
+                                    <Link to={'/login'}><button className="px-2 py-1 text-white font-bold w-full">Login</button></Link>
+                                </li>
+                                <li className="w-full bg-[#db5043c6] rounded-lg">
+                                    <Link to={'/registration'}><button className="px-2 py-1 text-white font-bold">Registration</button></Link>
+                                </li>
+                                
+                            </ul>
+                        </div>
+
+                        // <div>
+
+                        // </div>
                 }
             </div>
         </div>
