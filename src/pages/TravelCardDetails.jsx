@@ -31,26 +31,28 @@ const TravelCardDetails = () => {
                         </div> */}
                         <div>
                             <table className="w-full">
-                                <tr>
-                                    <th>Field Name</th>
-                                    <th>Value</th>
-                                </tr>
-                                <tr>
-                                    <td>Name</td>
-                                    <td>{name}</td>
-                                </tr>
-                                <tr>
-                                    <td>Email</td>
-                                    <td>{email}</td>
-                                </tr>
-                                <tr>
-                                    <td>Travel Time</td>
-                                    <td>{travel_time} Days</td>
-                                </tr>
-                                <tr>
-                                    <td>Total Visitor Year</td>
-                                    <td>{totalVisitors} +People</td>
-                                </tr>
+                                <tbody>
+                                    <tr>
+                                        <th>Field Name</th>
+                                        <th>Value</th>
+                                    </tr>
+                                    <tr>
+                                        <td>Name</td>
+                                        <td>{name}</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Email</td>
+                                        <td>{email}</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Travel Time</td>
+                                        <td>{travel_time} Days</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Total Visitor Year</td>
+                                        <td>{totalVisitors} +People</td>
+                                    </tr>
+                                </tbody>
                             </table>
                         </div>
                         <div className="mt-2">

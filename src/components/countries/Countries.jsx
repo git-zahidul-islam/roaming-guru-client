@@ -7,7 +7,7 @@ const Countries = ({ data }) => {
 
     return (
         <div>
-            <Link to={`/homeTravel/${country_Name}`}>
+            <Link to={`/travels/countryName/${country_Name}`}>
                 <div className="h-56 relative rounded-lg hover:scale-105 duration-700">
                     <img className="h-full w-full rounded-lg" src={image} alt="" />
                     <div className="p-4 absolute top-0 flex flex-col justify-center items-center h-full w-full bg-[#19193588] text-[#ffffffe1] rounded-lg">

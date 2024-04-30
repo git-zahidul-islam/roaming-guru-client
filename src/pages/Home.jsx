@@ -19,11 +19,10 @@ const Home = () => {
         fetch('http://localhost:5000/homeTravel')
             .then(res => res.json())
             .then(data => {
-                console.log(data);
                 setHomeData(data)
             })
     }, [])
-    console.log(homeData);
+
 
     if (loading) {
         return (
@@ -49,7 +48,7 @@ const Home = () => {
                 <Fade duration={1000} delay={500} direction="down">
                     <h1 className="text-2xl font-bold">Tourists Spots</h1>
                 </Fade>
-                <Fade duration={1000} delay={500} direction="down">
+                <Fade duration={800} delay={300} direction="down">
                     <p className="text-center text-gray-600">Explore the enchanting beauty of Kyoto's historic temples and tranquil gardens, where <br /> timeless elegance meets serene tranquility.</p>
                 </Fade>
                 <div className="grid lg:grid-cols-3 md:grid-cols-2 gap-6 py-4">

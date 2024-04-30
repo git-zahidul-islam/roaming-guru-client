@@ -50,9 +50,9 @@ export const router = createBrowserRouter([
                 loader: () => fetch('http://localhost:5000/homeTravel')
             },
             {
-                path: '/country/:country_Name',
+                path: '/travels/countryName/:countryName',
                 element: <CountriesData></CountriesData>,
-                loader: ({ params }) => fetch(`http://localhost:5000/homeTravel/${params.country_Name}`)
+                loader: ({ params }) => fetch(`http://localhost:5000/travels/countryName/${params.countryName}`)
             },
             {
                 path: '/addTouristsSpot',
