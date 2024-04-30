@@ -18,7 +18,7 @@ const Extra2 = () => {
                             <input type="email" placeholder="Enter your email"
                                 className="w-full bg-gray-50 py-3.5 px-4 text-base focus:outline-none" />
                             <button
-                                className="bg-[#333] hover:bg-[#111] text-white flex items-center transition-all font-semibold px-5 py-4">
+                                className="bg-[#D83F31] hover:bg-[#111] text-white flex items-center transition-all font-semibold px-5 py-4">
                                 Subscribe
                             </button>
                         </div>

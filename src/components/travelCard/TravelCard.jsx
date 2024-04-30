@@ -17,7 +17,7 @@ const TravelCard = ({ cardData }) => {
                 <p className="text-base font-medium">Travel time: {travel_time} Days</p>
                 <div className="flex gap-2">
                     <p className="w-1/2 py-3 text-gray-500 font-semibold text-xl">{average_cost}/<span className="text-red-500">$</span></p>
-                    <Link className="w-1/2 text-center py-3 bg-green-500" to={`/allTouristsSpot/${_id}`}>
+                    <Link className="w-1/2 text-center py-3 bg-[#d83f31e9] text-white rounded-lg" to={`/allTouristsSpot/${_id}`}>
                         <p>View details</p>
                     </Link>
                 </div>

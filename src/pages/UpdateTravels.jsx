@@ -55,8 +55,8 @@ const UpdateTravels = () => {
             <section className="">
                 <form onSubmit={handleUpdateData} className="container flex flex-col mx-auto space-y-12">
                     <fieldset className="grid grid-cols-4 gap-6 p-4 rounded-md">
-                        <div className="space-y-2 col-span-full lg:col-span-1">
-                            <p className="font-medium">Update Your Tourist Place</p>
+                        <div className="space-y-2 col-span-full lg:col-span-1 bg-[#34c47c9f]">
+                            <p className="font-medium text-white">Update Your Tourist Place</p>
                             <p className="text-xs">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Adipisci fuga autem eum!</p>
                         </div>
                         <div className="grid grid-cols-6 gap-4 col-span-full lg:col-span-3">
@@ -118,7 +118,7 @@ const UpdateTravels = () => {
                             </div>
 
                             <div className="col-span-full">
-                                <input className="btn btn-primary w-full" type="submit" value="Update Tourist Spot" />
+                                <input className="btn bg-[#d83f31d7] w-full text-white" type="submit" value="Update Tourist Spot" />
                             </div>
                         </div>
                     </fieldset>

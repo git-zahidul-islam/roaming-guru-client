@@ -57,7 +57,7 @@ const MyList = () => {
     return (
         <div className="min-h-[56vh]">
             <div className="container p-2 mx-auto sm:p-4 text-gray-800 mt-5">
-                <h2 className="text-2xl font-semibold leading-tight p-2 bg-slate-400">Invoices</h2>
+                <h2 className="text-2xl font-semibold leading-tight p-2 bg-[#34C47B] text-white">My Added Travel List</h2>
                 <div className="overflow-x-auto">
                     <table className="min-w-full text-sm">
                         <thead className="bg-gray-300">

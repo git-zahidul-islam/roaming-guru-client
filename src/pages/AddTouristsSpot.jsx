@@ -41,7 +41,7 @@ const AddTouristsSpot = () => {
 
     return (
         <div>
-            <div className="bg-green-500 p-4">
+            <div className="bg-[#34C47B] p-4">
                 <p className="text-xl font-bold ps-4 container mx-auto text-white">Tourist Data Collection</p>
             </div>
             <section>
@@ -110,7 +110,7 @@ const AddTouristsSpot = () => {
                             </div>
 
                             <div className="col-span-full">
-                                <input className="btn bg-green-800 text-white w-full hover:bg-none" type="submit" value="Add Tourist Spot" />
+                                <input className="btn bg-[#d83f31e2] text-white w-full hover:bg-none" type="submit" value="Add Tourist Spot" />
                             </div>
                         </div>
                     </fieldset>

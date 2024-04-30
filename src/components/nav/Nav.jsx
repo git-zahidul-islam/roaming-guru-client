@@ -13,10 +13,10 @@ const Nav = () => {
     },[theme])
 
     const navLink = <>
-        <li><NavLink className={({ isActive }) => isActive ? "text-[#00AFEF] text-xl font-semibold px-1 py-1 rounded-md" : "text-xl font-semibold px-1 py-1"} to={'/'}>Home</NavLink></li>
-        <li><NavLink className={({ isActive }) => isActive ? "text-[#00AFEF] text-xl font-semibold px-1 py-1 rounded-md" : "text-xl font-semibold px-1 py-1"} to={'/allTouristsSpot'}>All Tourists Spot</NavLink></li>
-        <li><NavLink className={({ isActive }) => isActive ? "text-[#00AFEF] text-xl font-semibold px-1 py-1 rounded-md" : "text-xl font-semibold px-1 py-1"} to={'/addTouristsSpot'}>Add Tourists Spot</NavLink></li>
-        <li><NavLink className={({ isActive }) => isActive ? "text-[#00AFEF] text-xl font-semibold px-1 py-1 rounded-md" : "text-xl font-semibold px-1 py-1"} to={'/myList'}>My List</NavLink></li>
+        <li><NavLink className={({ isActive }) => isActive ? "text-[#D83F31] text-xl font-semibold px-1 py-1 rounded-md" : "text-xl font-semibold px-1 py-1"} to={'/'}>Home</NavLink></li>
+        <li><NavLink className={({ isActive }) => isActive ? "text-[#D83F31] text-xl font-semibold px-1 py-1 rounded-md" : "text-xl font-semibold px-1 py-1"} to={'/allTouristsSpot'}>All Tourists Spot</NavLink></li>
+        <li><NavLink className={({ isActive }) => isActive ? "text-[#D83F31] text-xl font-semibold px-1 py-1 rounded-md" : "text-xl font-semibold px-1 py-1"} to={'/addTouristsSpot'}>Add Tourists Spot</NavLink></li>
+        <li><NavLink className={({ isActive }) => isActive ? "text-[#D83F31] text-xl font-semibold px-1 py-1 rounded-md" : "text-xl font-semibold px-1 py-1"} to={'/myList'}>My List</NavLink></li>
     </>
 
     const handleLogout = () => {
@@ -87,12 +87,12 @@ const Nav = () => {
                                 </div>
                                 {
                                     user.displayName &&
-                                    <div className="absolute invisible group-hover:visible bg-[#49c3f0d0] p-2 z-50 w-36 -left-10 rounded-lg">
+                                    <div className="absolute invisible group-hover:visible bg-[#D83F31] p-2 z-50 w-36 -left-10 rounded-lg">
                                         <h1 className="text-white text-lg">{user && user.displayName}</h1>
                                     </div>
                                 }
                             </div>
-                            <button onClick={handleLogout} className="px-3 py-2 bg-[#00afefbc] text-white text-base font-medium">Logout</button>
+                            <button onClick={handleLogout} className="px-3 py-2 bg-[#D83F31] text-white text-base font-medium">Logout</button>
                         </div>
                         :
                     <Link to={'/login'}><button className="px-3 py-2 bg-[#00AFEF] text-white font-bold">Login</button></Link>

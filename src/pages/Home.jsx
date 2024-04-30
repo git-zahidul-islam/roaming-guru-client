@@ -40,7 +40,7 @@ const Home = () => {
     }
 
     return (
-        <div>
+        <div className="space-y-10">
             <div className="lg:h-[80vh] md:h-[70vh] h-[50vh] w-full flex items-center justify-center">
                 <Slider></Slider>
             </div>
@@ -53,20 +53,20 @@ const Home = () => {
                     }
                 </div>
             </div>
-            <div className="container mx-auto">
+            <div className="container mx-auto lg:px-0 md:px-0 px-2">
                 <h1 className="text-center text-2xl font-bold">Countries</h1>
                 <p className="text-center text-gray-600">Explore the enchanting beauty of Kyoto's historic temples and tranquil gardens, where <br /> timeless elegance meets serene tranquility.</p>
                 {/* <Countries></Countries> */}
-                <div className="grid lg:grid-cols-3 md:grid-cols-2 grid-cols-1 gap-5">
+                <div className="grid lg:grid-cols-3 md:grid-cols-2 grid-cols-1 gap-8 mt-5">
                     {
                         homeData.map(data => <Countries key={data._id} data={data}></Countries>)
                     }
                 </div>
             </div>
-            <div className="">
+            <div>
                 <Extra1></Extra1>
             </div>
-            <div className="w-full from-teal-700 via-teal-600 to-teal-700">
+            <div className="w-full bg-[#34c47cd1]">
                 <Extra2></Extra2>
             </div>
         </div>

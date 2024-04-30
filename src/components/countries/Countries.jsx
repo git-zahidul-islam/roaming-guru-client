@@ -8,10 +8,10 @@ const Countries = ({ data }) => {
     return (
         <div>
             <Link to={`/homeTravel/${country_Name}`}>
-                <div className="h-60 relative">
-                    <img className="h-full w-full" src={image} alt="" />
-                    <div className="p-4 absolute top-0 flex flex-col justify-center items-center h-full w-full">
-                        <h1 className="text-2xl font-bold">{country_Name}</h1>
+                <div className="h-56 relative rounded-lg hover:scale-105 duration-700">
+                    <img className="h-full w-full rounded-lg" src={image} alt="" />
+                    <div className="p-4 absolute top-0 flex flex-col justify-center items-center h-full w-full bg-[#19193588] text-[#ffffffe1] rounded-lg">
+                        <h1 className="text-2xl font-bold text-white">{country_Name}</h1>
                         <p className="text-xs">{description}</p>
                     </div>
                 </div>

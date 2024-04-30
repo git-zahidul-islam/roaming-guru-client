@@ -1,5 +1,6 @@
 import { useLoaderData } from "react-router-dom";
-
+import { FaLocationArrow } from "react-icons/fa";
+import { GiSpookyHouse } from "react-icons/gi";
 
 const TravelCardDetails = () => {
     const loaderTravel = useLoaderData()
@@ -18,21 +19,43 @@ const TravelCardDetails = () => {
                         <div className="flex flex-wrap gap-4 mt-4">
                             <p className="text-gray-800 text-xl font-bold">{average_cost}$ Dollar</p>
                         </div>
-                        <div className="flex gap-2">
-                            <button className="p-2 bg-green-300">{country_Name}</button>
-                            <button className="p-2 bg-green-300">{seasonality}</button>
-                        </div>
-                        <p className="">{location}</p>
-                        <div className="bg-green-100">
-                            <p>Name: {name}</p>
-                            <p>Email: {email}</p>
-                            <p>Travel Times: {travel_time} Days</p>
-                            <p>Total Visitor: {totalVisitors}+ People</p>
-                            
+                        <button className="py-2 flex gap-2 text-lg"><GiSpookyHouse size={25} className="text-green-600" />{country_Name}</button>
+                        {/* <button className="p-2 bg-green-300">{seasonality}</button> */}
+                        <p className="flex gap-2 items-center text-lg"><FaLocationArrow className="text-green-600"></FaLocationArrow>{location}</p>
+                        <p className="text-lg">Travel Season: {seasonality}</p>
+                        {/* <div className="bg-green-100 border-2">
+                            <p className="border-b-2">Name: {name}</p>
+                            <p className="border-b-2">Email: {email}</p>
+                            <p className="border-b-2">Travel Times: {travel_time} Days</p>
+                            <p className="">Total Visitor: {totalVisitors}+ People</p>
+                        </div> */}
+                        <div>
+                            <table className="w-full">
+                                <tr>
+                                    <th>Field Name</th>
+                                    <th>Value</th>
+                                </tr>
+                                <tr>
+                                    <td>Name</td>
+                                    <td>{name}</td>
+                                </tr>
+                                <tr>
+                                    <td>Email</td>
+                                    <td>{email}</td>
+                                </tr>
+                                <tr>
+                                    <td>Travel Time</td>
+                                    <td>{travel_time} Days</td>
+                                </tr>
+                                <tr>
+                                    <td>Total Visitor Year</td>
+                                    <td>{totalVisitors} +People</td>
+                                </tr>
+                            </table>
                         </div>
                         <div className="mt-2">
-                            <h3 className="text-lg font-bold text-gray-800">Description</h3>
-                            <div>
+                            <h3 className="text-lg font-bold text-white py-2 bg-green-400">Description</h3>
+                            <div className="">
                                 <p>{description}</p>
                             </div>
                         </div>
