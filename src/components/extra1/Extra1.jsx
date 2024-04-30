@@ -1,4 +1,4 @@
-
+import { Slide } from "react-awesome-reveal";
 
 
 const Extra1 = () => {
@@ -6,7 +6,9 @@ const Extra1 = () => {
         <div>
             <section className="mb-10 text-gray-800">
                 <div className="container flex flex-col items-center mx-auto mb-1 md:p-10 md:px-12">
+                    <Slide duration={1000} delay={100} direction="right">
                     <h1 className="p-4 text-4xl font-semibold leading-none text-center">What our <span className="text-[#D83F31]">customers</span> are saying about us</h1>
+                    </Slide>
                 </div>
                 <div className="container flex flex-col items-center justify-center mx-auto lg:flex-row lg:flex-wrap lg:justify-evenly lg:px-10">
                     <div className="flex flex-col max-w-sm mx-4 my-6 shadow-lg">

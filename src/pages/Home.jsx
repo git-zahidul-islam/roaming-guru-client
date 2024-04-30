@@ -7,10 +7,11 @@ import Slider from "../components/slider/Slider";
 import Extra2 from "../components/extra2/Extra2";
 import Extra1 from "../components/extra1/Extra1";
 import Countries from "../components/countries/Countries";
+import { Fade, Zoom } from "react-awesome-reveal";
 
 
 const Home = () => {
-    const {loading} = useContext(AuthContext)
+    const { loading } = useContext(AuthContext)
     const travelData = useLoaderData()
     const [homeData, setHomeData] = useState([])
 
@@ -24,8 +25,8 @@ const Home = () => {
     }, [])
     console.log(homeData);
 
-    if(loading){
-        return(
+    if (loading) {
+        return (
             <div className='flex justify-center items-center h-[calc(100vh-180px)]'>
                 <RotatingLines
                     visible={true}
@@ -45,16 +46,22 @@ const Home = () => {
                 <Slider></Slider>
             </div>
             <div className="min-h-[60vh] container mx-auto flex flex-col justify-center items-center mt-5 space-y-4">
-                <h1 className="text-2xl font-bold">Tourists Spots</h1>
-                <p className="text-center text-gray-600">Explore the enchanting beauty of Kyoto's historic temples and tranquil gardens, where <br /> timeless elegance meets serene tranquility.</p>
+                <Fade duration={1000} delay={500} direction="down">
+                    <h1 className="text-2xl font-bold">Tourists Spots</h1>
+                </Fade>
+                <Fade duration={1000} delay={500} direction="down">
+                    <p className="text-center text-gray-600">Explore the enchanting beauty of Kyoto's historic temples and tranquil gardens, where <br /> timeless elegance meets serene tranquility.</p>
+                </Fade>
                 <div className="grid lg:grid-cols-3 md:grid-cols-2 gap-6 py-4">
                     {
-                        travelData.slice(0,6).map(data => <HomeCard key={data._id} travelData={data}></HomeCard>)
+                        travelData.slice(0, 6).map(data => <HomeCard key={data._id} travelData={data}></HomeCard>)
                     }
                 </div>
             </div>
             <div className="container mx-auto lg:px-0 md:px-0 px-2">
-                <h1 className="text-center text-2xl font-bold">Countries</h1>
+                <Zoom duration={1500} delay={100} direction="right" >
+                    <h1 className="text-center text-2xl font-bold">Countries</h1>
+                </Zoom>
                 <p className="text-center text-gray-600">Explore the enchanting beauty of Kyoto's historic temples and tranquil gardens, where <br /> timeless elegance meets serene tranquility.</p>
                 {/* <Countries></Countries> */}
                 <div className="grid lg:grid-cols-3 md:grid-cols-2 grid-cols-1 gap-8 mt-5">

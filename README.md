@@ -1,8 +1,29 @@
-# React + Vite
+# Roaming Guru
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
 
-Currently, two official plugins are available:
+Welcome to Roaming Guru, your ultimate destination for travel enthusiasts. Whether you're a seasoned globetrotter or planning your first adventure, Roaming Guru is here to guide you every step of the way. From exotic destinations to hidden gems, we've got you covered with expert tips, insightful articles, and personalized recommendations.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## What We Offer
+1. **All Tourist Spots:** Discover a plethora of tourist spots meticulously curated by seasoned travelers. From vibrant cities to tranquil landscapes, uncover the finest attractions, local delicacies, and cultural marvels each spot has to offer.
+
+2. **Add Tourist Spot:** Planning your next adventure? Our platform allows you to contribute and add your favorite tourist spots. Share your discoveries and enrich the travel experiences of others.
+
+3. **My List:** Access your personalized list of favorite tourist spots conveniently from our navigation bar. Easily navigate through your saved destinations and plan your next itinerary effortlessly.
+
+4. **Home Page Tourist Spot:** Explore our homepage featuring a curated selection of tourist spots from various countries. Get inspired and start planning your next journey with our handpicked recommendations.
+
+
+## Get Started
+Ready to embark on your next adventure? Explore our website, dive into our resources, and let Roaming Guru be your trusted companion on your travels. Remember, the world is waiting to be explored – let's start roaming!
+
+# Implement NPM packages list
+1. React-simple-typewriter
+2. React Awesome reveal
+3. react-loader-spinner 
+4. AOS Package
+
+# react icon use
+All icon get from <a href ="https://react-icons.github.io/react-icons/">react-icons</a>
+
+# Live website 
+link: https://roaming-guru.web.app
