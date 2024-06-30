@@ -48,7 +48,9 @@ const Login = () => {
         <div className="min-h-[60vh]">
             <div className="hero min-h-[85vh] flex items-center justify-center">
                 <div className="hero-content flex-col lg:flex-row">
-                    <img src="https://daisyui.com/images/stock/photo-1635805737707-575885ab0820.jpg" className="max-w-sm rounded-lg shadow-2xl lg:block md:hidden hidden" />
+                    <div className="lg:w-[60%] md:w-[60%] w-full">
+                        <img src="https://tds-images.thedailystar.net/sites/default/files/images/2022/05/28/sundarbans-1.jpg" alt="logo" />
+                    </div>
                     <div className="card w-full max-w-sm shadow-2xl bg-base-100">
                         {/* <form onSubmit={handleLogin} className="card-body">
                             <div className="form-control">
@@ -77,7 +79,7 @@ const Login = () => {
                         <div className="w-full max-w-md p-4 rounded-md shadow sm:p-8 bg-gray-50 text-gray-800">
                             <h2 className="mb-3 text-3xl font-semibold text-center">Login to your account</h2>
                             <p className="text-sm text-center text-gray-600">Don't have account?
-                                <Link to={'/registration'} className="focus:underline hover:underline text-[#00AFEF] ps-2">Registration</Link>
+                                <Link to={'/registration'} className="focus:underline hover:underline text-[#DB5043] ps-2">Registration</Link>
                             </p>
                             <div className="my-6 space-y-4">
                                 <button aria-label="Login with Google" onClick={handleGoogleLogin} className="flex items-center justify-center w-full p-4 space-x-4 border rounded-md focus:ring-2 focus:ring-offset-1 border-gray-600 focus:ring-lime-600">
@@ -112,7 +114,7 @@ const Login = () => {
                                         <input type="password" name="password" id="password" placeholder="*****" className="w-full px-3 py-2 border rounded-md border-gray-300 bg-gray-50 text-gray-800 focus:border-lime-600" />
                                     </div>
                                 </div>
-                                <button className="w-full px-8 py-3 font-semibold rounded-md bg-lime-600 text-gray-50">Sign in</button>
+                                <button className="w-full px-8 py-3 font-semibold rounded-md bg-[#DB5043] text-gray-100/90">Sign in</button>
                             </form>
                         </div>
                     </div>

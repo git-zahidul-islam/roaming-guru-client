@@ -50,8 +50,10 @@ const Nav = () => {
                     </ul>
                 </div>
                 <Link to={'/'} className="text-2xl font-bold lg:w-8/12 md:w-8/12 w-52">
-                    <h1 className="text-xl font-bold">Roaming Guru</h1>
-
+                    {/* <h1 className="text-xl font-bold">Roaming Guru</h1> */}
+                    <div className="lg:w-[80px] md:w-[75px] w-16">
+                    <img className="w-full h-full" src="/logo.png" alt="logo" />
+                    </div>
                 </Link>
             </div>
             <div className="navbar-center hidden lg:flex">

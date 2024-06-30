@@ -120,9 +120,9 @@ const Registration = () => {
                         </div>
                         <div className="form-control mt-6">
                             {/* <input type="submit" value="Registration" /> */}
-                            <button className="btn btn-primary">Registration</button>
+                            <button className="p-2 text-white/90 rounded-md bg-[#DB5043] ">Registration</button>
                             <p className="px-6 text-base text-center ">Do you have an account
-                                <Link to={'/login'} className="ps-2 text-green-500">Login</Link>.
+                                <Link to={'/login'} className="ps-2 text-[#DB5043]">Login</Link>.
                             </p>
                         </div>
                     </form>
